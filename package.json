@@ -1,5 +1,5 @@
 {
-  "name": "git-repo-head",
+  "name": "git-head-info",
   "version": "0.0.0",
   "description": "Retrieve current sha and branch name from a git repo.",
   "main": "lib/index.js",
@@ -10,16 +10,16 @@
     "lint": "eslint --fix src/**/*.ts",
     "test": "jest --coverage",
     "build": "rimraf lib && tsc",
-    "preversion": "npm run build && npm test"
+    "preversion": "npm run build"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run lint && npm test"
     }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ongw20/git-repo-head.git"
+    "url": "git+https://github.com/ongw20/git-head-info.git"
   },
   "keywords": [
     "git",
@@ -31,9 +31,12 @@
   "author": "ong <ongw20@outlook.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ongw20/git-repo-head/issues"
+    "url": "https://github.com/ongw20/git-head-info/issues"
   },
-  "homepage": "https://github.com/ongw20/git-repo-head#readme",
+  "homepage": "https://github.com/ongw20/git-head-info#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@types/fs-extra": "^5.0.5",
     "@types/jest": "^24.0.11",
