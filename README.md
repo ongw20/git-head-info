@@ -10,15 +10,24 @@ npm install git-head-info
 ```js
 import gitHeadInfo from 'git-head-info' /* or */ const gitHeadInfo = require('git-head-info')
 
+/**
+ * @param {path | void} repo: the git repo to get HEAD info, default is current working dir
+ * @returns ({
+ *  repo: the repo used to get git info
+ *  branch: current branch
+ *  sha: branch sha
+ * })
+ */
+
 // promise
-gitHeadInfo().then(res => {
+gitHeadInfo(repo?).then(res => {
   ...
 }).catch()
 
 // async
 async function foo() {
   try {
-    const res = await gitHeadInfo()
+    const res = await gitHeadInfo(repo?)
     ...
   } catch() {}
 }
