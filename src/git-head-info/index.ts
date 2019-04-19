@@ -8,7 +8,7 @@ interface GitInfo {
   sha: string
 }
 /**
- * @param {string} repo the repo to get git info
+ * @param {path} repo the git repo to get HEAD info
  * @returns {Promise<GitInfo>}
  */
 export default async function gitHeadInfo(repo: string = process.cwd()): Promise<GitInfo> {
