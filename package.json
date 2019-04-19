@@ -1,0 +1,50 @@
+{
+  "name": "git-repo-head",
+  "version": "0.1.0",
+  "description": "Retrieve current sha and branch name from a git repo.",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "lint": "eslint --fix src/**/*.ts",
+    "test": "jest --coverage",
+    "build": "rimraf lib && tsc",
+    "preversion": "npm run build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ongw20/git-repo-head.git"
+  },
+  "keywords": [
+    "git",
+    "HEAD",
+    "info",
+    "branch",
+    "hash"
+  ],
+  "author": "ong <ongw20@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ongw20/git-repo-head/issues"
+  },
+  "homepage": "https://github.com/ongw20/git-repo-head#readme",
+  "devDependencies": {
+    "@typescript-eslint/parser": "^1.6.0",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^1.3.1",
+    "jest": "^24.7.1",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.4"
+  }
+}
