@@ -1,3 +1,3 @@
-import gitHeadInfo from './git'
+import gitHeadInfo from './git-head-info'
 
 export = gitHeadInfo
