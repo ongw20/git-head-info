@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    name: Test on node ${{ matrix.node-version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -20,7 +20,6 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install and test
-      run: |
+    - run: |
         npm install
         npm test
