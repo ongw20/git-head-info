@@ -46,7 +46,31 @@ describe('Get git head info should return correct info', () => {
       res.sha = res.sha.slice(0, 8)
       expect(res).toEqual({
         repo: REPO,
-        branch: 'master',
+        sha: 'f568b0cf',
+        branch: 'master'
+      })
+    }).catch()
+  })
+
+  test('can use in async', async() => {
+    const res = await gitHeadInfo(REPO)
+    res.sha = res.sha.slice(0, 8)
+    expect(res).toEqual({
+      repo: REPO,
+      sha: 'f568b0cf',
+      branch: 'master'
+    })
+  })
+})
+
+describe('Get git info should handle detached HEAD state correctly', () => {
+  beforeAll(() => changeGitFolder('dot-git-detached'))
+
+  test('can use as promise', () => {
+    gitHeadInfo(REPO).then(res => {
+      res.sha = res.sha.slice(0, 8)
+      expect(res).toEqual({
+        repo: REPO,
         sha: 'f568b0cf'
       })
     }).catch()
@@ -57,7 +81,6 @@ describe('Get git head info should return correct info', () => {
     res.sha = res.sha.slice(0, 8)
     expect(res).toEqual({
       repo: REPO,
-      branch: 'master',
       sha: 'f568b0cf'
     })
   })
