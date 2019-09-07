@@ -14,8 +14,8 @@ import gitHeadInfo from 'git-head-info' /* or */ const gitHeadInfo = require('gi
  * @param {path | void} repo: the git repo to get HEAD info, default is current working dir
  * @returns ({
  *  repo: the repo used to get git info
- *  branch: current branch
- *  sha: branch sha
+ *  sha: HEAD sha
+ *  branch: HEAD branch | undefined(if in `detached HEAD` state)
  * })
  */
 
