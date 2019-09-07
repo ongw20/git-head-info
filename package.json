@@ -1,6 +1,6 @@
 {
   "name": "git-head-info",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Retrieve current sha and branch name from a git repo.",
   "main": "lib/index.js",
   "files": [
