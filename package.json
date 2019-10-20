@@ -38,7 +38,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@types/fs-extra": "^5.1.0",
+    "@types/fs-extra": "^8.0.1",
     "@types/jest": "^24.0.15",
     "@types/node": "^11.13.17",
     "@typescript-eslint/parser": "^1.12.0",
